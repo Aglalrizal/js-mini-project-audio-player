@@ -19,6 +19,9 @@ window.addEventListener("load", () => {
 
 playBtn.addEventListener("click", (e) => {
   const targetEl = e.target;
+  if (audioCtx.state == "suspended") {
+    audioCtx.resume();
+  }
   if (targetEl.getAttribute("class") === "paused") {
     audioElement.play();
     targetEl.setAttribute("class", "playing");
