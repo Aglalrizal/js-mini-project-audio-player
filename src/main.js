@@ -31,6 +31,21 @@ playBtn.addEventListener("click", (e) => {
   }
 });
 
+audioElement.addEventListener("timeupdate", () => {
+  seeker.value = audioElement.currentTime;
+  time.textContent = convertTime(audioElement.currentTime);
+});
+
+audioElement.addEventListener("ended", () => {
+  playBtn.setAttribute("class", "paused");
+});
+
+seeker.addEventListener("input", () => {
+  audioElement.currentTime = seeker.value;
+});
+
+seeker.setAttribute("max", audioElement.duration);
+
 const gainNode = audioCtx.createGain();
 
 volumeSlider.addEventListener("input", () => {
