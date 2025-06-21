@@ -21,4 +21,10 @@ playBtn.addEventListener("click", (e) => {
   }
 });
 
-console.log("main js masuk broq");
+const gainNode = audioCtx.createGain();
+
+volumeSlider.addEventListener("input", () => {
+  gainNode.gain.value = volumeSlider.value;
+});
+
+audioSource.connect(gainNode).connect(audioCtx.destination);
