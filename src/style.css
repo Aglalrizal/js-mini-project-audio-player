@@ -4,7 +4,17 @@
 
 body {
   background-size: 6px 6px !important;
-  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0), 46%, #577399, 49%, #577399, 51%, rgba(0, 0, 0, 0), 55%);
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0),
+    46%,
+    #577399,
+    49%,
+    #577399,
+    51%,
+    rgba(0, 0, 0, 0),
+    55%
+  );
   background-color: white;
 }
 
@@ -51,11 +61,11 @@ button {
   margin-left: 16px;
 }
 
-.control-wrapper>input {
+.control-wrapper > input {
   flex: 1;
 }
 
-.control-wrapper>span {
+.control-wrapper > span {
   font-size: 12px;
   font-weight: bold;
 }
@@ -65,7 +75,7 @@ button {
 }
 
 .playing::after {
-  content: '';
+  content: "";
   position: absolute;
   transform: translate(-50%, -50%);
   height: 48px;
@@ -73,7 +83,7 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/pause-button.svg');
+  background-image: url("/pause-button.svg");
 }
 
 .paused {
@@ -81,7 +91,7 @@ button {
 }
 
 .paused::after {
-  content: '';
+  content: "";
   position: absolute;
   transform: translate(-50%, -50%);
   height: 48px;
@@ -89,7 +99,7 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/play-button.svg');
+  background-image: url("/play-button.svg");
 }
 
 #title {
@@ -99,9 +109,8 @@ button {
 }
 
 #volume {
-  writing-mode: sideways-lr;
-  appearance: unset;
-  -webkit-appearance: slider-vertical;
+  writing-mode: vertical-lr;
+  direction: rtl;
   width: 8px;
   height: 70px;
   padding: 0 5px;
